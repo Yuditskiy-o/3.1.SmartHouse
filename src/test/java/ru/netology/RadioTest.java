@@ -145,6 +145,16 @@ class RadioTest {
     }
 
     @Test
+    public void shouldNotSetNextVolumeOverMax() {
+        Radio radio = new Radio();
+        radio.setMaxVolume(10);
+        radio.setMinVolume(0);
+        radio.setCurrentVolume(10);
+        radio.increaseCurrentVolume();
+        assertEquals(10, radio.getCurrentVolume());
+    }
+
+    @Test
     public void shouldSetPrevVolume() {
         Radio radio = new Radio();
         radio.setMaxVolume(10);
@@ -152,5 +162,15 @@ class RadioTest {
         radio.setCurrentVolume(3);
         radio.decreaseCurrentVolume();
         assertEquals(2, radio.getCurrentVolume());
+    }
+
+    @Test
+    public void shouldNotSetPrevVolumeLessMin() {
+        Radio radio = new Radio();
+        radio.setMaxVolume(10);
+        radio.setMinVolume(0);
+        radio.setCurrentVolume(0);
+        radio.decreaseCurrentVolume();
+        assertEquals(0, radio.getCurrentVolume());
     }
 }

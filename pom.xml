@@ -52,11 +52,22 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
                 </executions>
                 <configuration>
                     <rules>
                         <rule>
                             <limits>
+                                <limit>
+                                    <counter>BRANCH</counter>
+                                    <value>COVEREDRATIO</value>
+                                    <minimum>100%</minimum>
+                                </limit>
                                 <limit>
                                     <counter>COMPLEXITY</counter>
                                     <value>COVEREDRATIO</value>
