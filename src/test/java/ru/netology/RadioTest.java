@@ -18,6 +18,12 @@ class RadioTest {
     }
 
     @Test
+    public void shouldSetDefaultStation10() {
+        radio.setCurrentStation(11);
+        assertEquals(10, radio.getDefaultStation());
+    }
+
+    @Test
     public void shouldSetStation() {
         radio.setCurrentStation(10);
         assertEquals(10, radio.getCurrentStation());
@@ -83,8 +89,8 @@ class RadioTest {
 
     @Test
     public void shouldSetMaxVolume() {
-        radio.setCurrentVolume(0);
-        assertEquals(10, radio.getMaxVolume());
+        radio.setCurrentVolume(50);
+        assertEquals(100, radio.getMaxVolume());
     }
 
     @Test
