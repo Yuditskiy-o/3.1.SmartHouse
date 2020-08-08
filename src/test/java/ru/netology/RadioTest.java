@@ -20,7 +20,7 @@ class RadioTest {
     @Test
     public void shouldSetDefaultStation10() {
         radio.setCurrentStation(11);
-        assertEquals(10, radio.getDefaultStation());
+        assertEquals(10, radio.getDefaultStations());
     }
 
     @Test
